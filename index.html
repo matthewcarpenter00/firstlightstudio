@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>First Light Media | Websites, Branding and Marketing</title>
+<meta name="description" content="Independent studio building websites, brands and marketing for hospitality, spirits, design and family destinations. Miami, Jalisco and Baja California.">
+<meta property="og:title" content="First Light Media">
+<meta property="og:description" content="Websites, brands and marketing for places people want to go.">
+<meta property="og:image" content="/assets/og.jpg">
+<meta name="theme-color" content="#282727">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: Snellenberg style studio index. Charcoal stage for the name, paper sheet for the work list, charcoal close. One cursor preview, one marquee, one magnetic button. */
+:root{
+  --char:#282727;        /* brand charcoal from the logo */
+  --char-2:#323131;
+  --ink:#1c1b1b;
+  --lime:#f3f99c;        /* brand lime from the logo */
+  --paper:#f2f1ec;
+  --stone:#8d8b84;       /* warm neutral biased toward the lime */
+  --rule-dark:rgba(243,249,156,.16);
+  --rule-light:rgba(28,27,27,.14);
+  --f-display:"Big Shoulders Display","Oswald","Arial Narrow",sans-serif;
+  --f-body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gutter:clamp(16px,4.2vw,64px);
+  --mark:url("/assets/mark.png");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
+body{margin:0;background:var(--char);color:var(--paper);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
+.wrap{padding-inline:var(--gutter)}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.mark{display:inline-block;background:var(--lime);-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
+
+/* NAV */
+.nav{position:absolute;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding-block:28px;padding-top:calc(28px + env(safe-area-inset-top,0px))}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:var(--lime)}
+.brand .mark{width:26px;height:26px}
+.nav ul{display:flex;gap:clamp(18px,3vw,40px);list-style:none;margin:0;padding:0}
+.nav ul a{position:relative;font-weight:500;font-size:15px}
+.nav ul a::after{content:"";position:absolute;left:50%;bottom:-8px;width:5px;height:5px;border-radius:50%;background:var(--lime);transform:translateX(-50%) scale(0);transition:transform .3s}
+.nav ul a:hover::after{transform:translateX(-50%) scale(1)}
+
+/* HERO */
+.hero{position:relative;min-height:min(92svh,860px);display:flex;flex-direction:column;justify-content:flex-end;padding-top:120px;overflow:hidden;background:radial-gradient(120% 80% at 78% 18%,#33322f 0%,var(--char) 55%)}
+.hero-mark{position:absolute;right:calc(var(--gutter) + 2vw);top:14%;width:clamp(180px,28vw,420px);aspect-ratio:1;opacity:.9}
+.hero-mark .mark{width:100%;height:100%}
+.hero-meta{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:clamp(20px,4vh,40px)}
+.hero-meta p{margin:0;max-width:22ch;font-size:clamp(18px,1.6vw,22px);line-height:1.35;color:var(--paper)}
+.hero-meta .arrow{font-size:28px;color:var(--lime);display:block;margin-bottom:14px}
+.where{text-align:right;color:var(--stone)}
+.where strong{display:block;color:var(--paper);font-family:var(--f-body);text-transform:none;letter-spacing:0;font-size:17px;font-weight:500;margin-top:6px}
+.marquee{white-space:nowrap;overflow:hidden;line-height:.8;padding-bottom:clamp(18px,3vh,36px);user-select:none}
+.marquee-track{display:inline-flex;will-change:transform}
+.marquee span{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(96px,17vw,280px);letter-spacing:-.005em;color:var(--lime);padding-right:.35em}
+.marquee span i{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--lime)}
+
+/* INTRO */
+.intro{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,6vw,120px);padding-block:clamp(90px,14vh,160px);border-top:1px solid var(--rule-dark)}
+.intro h2{margin:0;font-family:var(--f-body);font-weight:500;font-size:clamp(26px,3.1vw,46px);line-height:1.18;letter-spacing:-.015em;text-wrap:balance}
+.intro h2 em{font-style:normal;color:var(--lime)}
+.intro aside{display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+.intro aside p{margin:0;color:#cfcdc6;max-width:38ch}
+.round{position:relative;display:grid;place-items:center;width:clamp(128px,11vw,168px);aspect-ratio:1;border-radius:50%;background:var(--lime);color:var(--ink);font-weight:600;font-size:15px;text-align:center;line-height:1.2}
+.round span{pointer-events:none}
+
+/* WORK */
+.work{background:var(--paper);color:var(--ink);padding-block:clamp(80px,12vh,140px);border-radius:28px 28px 0 0}
+.work-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:22px;color:#6f6d66}
+.work-head h3{margin:0;font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule-light)}
+.row{border-bottom:1px solid var(--rule-light)}
+.row a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px;padding-block:clamp(26px,4.4vw,56px);transition:padding .45s cubic-bezier(.2,.7,.2,1),opacity .35s}
+.rows:hover .row a{opacity:.32}
+.rows .row a:hover{opacity:1;padding-inline:clamp(0px,2.2vw,32px)}
+.row h4{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(40px,6.6vw,104px);line-height:.9;letter-spacing:.005em;min-width:0;text-wrap:balance}
+.row .tag{display:inline-block;vertical-align:top;margin-left:.5em;margin-top:.6em;padding:4px 9px 3px;border-radius:99px;background:var(--ink);color:var(--lime);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;line-height:1.2;font-weight:500}
+.row .tag.concept{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.row .svc{font-size:15px;color:#55534d;text-align:right;max-width:26ch;line-height:1.35}
+.row .thumb{display:none}
+.more{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;padding-top:44px}
+.more p{margin:0;color:#6f6d66;max-width:60ch}
+.more p b{color:var(--ink);font-weight:600}
+
+.clients{padding-top:clamp(70px,10vh,110px)}
+.clients ul{list-style:none;margin:0;padding:22px 0 0;border-top:1px solid var(--rule-light);display:flex;flex-wrap:wrap;gap:6px 0}
+.clients li{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,2.6vw,38px);line-height:1.15;color:var(--ink)}
+.clients li:not(:last-child)::after{content:"/";margin:0 .45em;color:#b9b7b0;font-weight:500}
+/* cursor preview */
+.preview{position:fixed;left:0;top:0;width:clamp(260px,22vw,340px);aspect-ratio:3/4;pointer-events:none;z-index:40;border-radius:10px;overflow:hidden;transform:translate(-50%,-50%) scale(0);box-shadow:0 30px 80px rgba(0,0,0,.35);background:var(--char)}
+.preview-inner{position:absolute;inset:0;transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.preview-inner img{width:100%;height:100%;object-fit:cover}
+.preview-cta{position:absolute;left:50%;top:50%;width:88px;height:88px;margin:-44px 0 0 -44px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-weight:600;font-size:14px}
+
+/* SERVICES */
+.services{background:var(--paper);color:var(--ink);padding-bottom:clamp(90px,14vh,150px)}
+.svc-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--rule-light)}
+.svc-grid div{padding:28px 22px 0 0;display:flex;flex-direction:column;gap:10px}
+.svc-grid h5{margin:0;font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:28px;letter-spacing:.01em}
+.svc-grid p{margin:0;color:#55534d;font-size:15px;line-height:1.45}
+
+/* CONTACT */
+.contact{position:relative;background:var(--char);padding-block:clamp(90px,15vh,170px) 40px;overflow:hidden;border-radius:28px 28px 0 0;margin-top:-28px}
+.contact-top{display:flex;align-items:center;gap:clamp(16px,2vw,28px)}
+.contact-top .mark{width:clamp(56px,6vw,88px);height:clamp(56px,6vw,88px)}
+.contact h2{margin:0;font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(64px,11vw,184px);line-height:.86;color:var(--paper)}
+.contact h2 span{color:var(--lime)}
+.contact-line{position:relative;margin-top:clamp(50px,9vh,90px);border-top:1px solid var(--rule-dark)}
+.contact-line .round{position:absolute;right:clamp(0px,8vw,140px);top:0;transform:translateY(-50%);width:clamp(150px,14vw,200px);font-size:16px}
+.pills{display:flex;flex-wrap:wrap;gap:12px;padding-top:clamp(84px,10vh,110px)}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:18px 26px;border-radius:99px;border:1px solid var(--rule-dark);font-size:17px;background:transparent;color:var(--paper);font-family:var(--f-body);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.pill:hover{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.pill small{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-top:clamp(70px,12vh,120px);color:var(--stone)}
+.foot div{display:flex;flex-direction:column;gap:6px}
+.foot b{color:var(--paper);font-weight:500;font-family:var(--f-body);font-size:15px;letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums}
+
+/* floating menu button */
+.fab{position:fixed;right:var(--gutter);top:calc(24px + env(safe-area-inset-top,0px));z-index:50;width:64px;height:64px;border-radius:50%;background:var(--ink);border:1px solid var(--rule-dark);display:grid;place-items:center;cursor:pointer;transform:scale(0)}
+.fab i,.fab i::before{display:block;width:22px;height:1.5px;background:var(--paper);position:relative;transition:transform .3s}
+.fab i::before{content:"";position:absolute;top:-7px}
+.fab i{top:3px}
+.menu-open .fab i{transform:rotate(45deg);top:0}
+.menu-open .fab i::before{transform:rotate(-90deg);top:0}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(520px,100%);z-index:45;background:var(--ink);padding:calc(120px + env(safe-area-inset-top,0px)) var(--gutter) 40px;transform:translateX(105%);visibility:hidden;transition:transform .7s cubic-bezier(.7,0,.2,1),visibility 0s .7s;display:flex;flex-direction:column;justify-content:space-between}
+.menu-open .drawer{transform:none;visibility:visible;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.drawer nav{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--rule-dark);padding-top:26px}
+.drawer nav a{font-family:var(--f-display);font-weight:800;font-size:clamp(48px,8vw,76px);text-transform:uppercase;line-height:1}
+.drawer nav a:hover{color:var(--lime)}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);opacity:0;visibility:hidden;background:var(--lime);color:var(--ink);padding:12px 20px;border-radius:99px;font-weight:600;z-index:60;transition:transform .4s}
+.toast.show{transform:translate(-50%,0);opacity:1;visibility:visible}
+
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero-mark{top:110px;right:var(--gutter);width:44vw;opacity:.5}
+  .hero-meta{grid-template-columns:1fr}
+  .where{text-align:left}
+  .intro{grid-template-columns:1fr}
+  .row a{grid-template-columns:88px minmax(0,1fr);gap:18px}
+  .row .thumb{display:block;width:88px;aspect-ratio:3/4;border-radius:6px;overflow:hidden;grid-row:span 2}
+  .row .thumb img{width:100%;height:100%;object-fit:cover}
+  .row .svc{text-align:left;font-size:14px}
+  .rows:hover .row a{opacity:1}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-grid div{padding-bottom:22px}
+  .contact-line .round{right:0}
+  .fab{transform:scale(1)}
+}
+@media (max-width:480px){.svc-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<header class="nav wrap">
+  <a class="brand" href="#top" aria-label="First Light Media home"><span class="mark" aria-hidden="true"></span>First Light</a>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<button class="fab" id="fab" aria-label="Open menu" aria-expanded="false"><i></i></button>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <nav>
+    <span class="mono" style="color:var(--stone);margin-bottom:10px">Navigation</span>
+    <a href="#top">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="mono" style="color:var(--stone)">matthew@firstlight.media</div>
+</aside>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-mark" aria-hidden="true"><span class="mark"></span></div>
+    <div class="hero-meta wrap">
+      <p><span class="arrow" aria-hidden="true">↘</span>Websites, brands and marketing for places people want to go.</p>
+      <div class="where mono">Studio in three regions<strong>Miami · Jalisco · Baja California</strong></div>
+    </div>
+    <div class="marquee" aria-label="First Light Media">
+      <div class="marquee-track" id="track">
+        <span>First Light <i>Media</i> ·</span><span aria-hidden="true">First Light <i>Media</i> ·</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro wrap" id="about">
+    <h2>An independent studio building <em>websites, brands and marketing</em> for hospitality, spirits, design and family destinations. Senior attention on every project, and work made to launch.</h2>
+    <aside>
+      <p>We design and build on Webflow, Shopify, Wix and Squarespace, then keep the work moving with SEO, email and content. We also build the internal tools behind it, from reservation systems to staff portals.</p>
+      <a class="round magnetic" href="#contact"><span>About the studio</span></a>
+    </aside>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="work-head"><h3>Selected work</h3><span class="mono">7 projects</span></div>
+      <ul class="rows" id="rows">
+        <li class="row" data-img="everglades"><a href="https://everglades.com/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="everglades"></span>
+          <h4>Everglades Alligator Farm<span class="tag">New</span></h4><span class="svc">Website</span></a></li>
+        <li class="row" data-img="maz"><a href="https://maz.firstlight.media/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="maz"></span>
+          <h4>Maz Ocean<span class="tag concept">Concept</span></h4><span class="svc">Website, Marketing, Content</span></a></li>
+        <li class="row" data-img="lofts"><a href="https://landing.thelightinglofts.com/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="lofts"></span>
+          <h4>The Lighting Lofts</h4><span class="svc">Website</span></a></li>
+        <li class="row" data-img="legado"><a href="https://elgranlegado.com/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="legado"></span>
+          <h4>El Gran Legado</h4><span class="svc">Website, Marketing</span></a></li>
+        <li class="row" data-img="pedini"><a href="https://www.pedinimiami.com/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="pedini"></span>
+          <h4>Pedini by Daruso</h4><span class="svc">Website, SEO</span></a></li>
+        <li class="row" data-img="vanwormer"><a href="https://www.vanwormerfishing.com/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="vanwormer"></span>
+          <h4>Van Wormer Resorts</h4><span class="svc">Website, SEO, Marketing, Email, Content</span></a></li>
+        <li class="row" data-img="abanzamos"><a href="https://www.abanzamos.com/" target="_blank" rel="noopener">
+          <span class="thumb"><img alt="" data-src="abanzamos"></span>
+          <h4>ABAnzamos</h4><span class="svc">Branding, Website, Marketing</span></a></li>
+      </ul>
+      <div class="clients">
+        <div class="work-head"><h3>Partners</h3><span class="mono">Also in the studio's work</span></div>
+        <ul>
+          <li>United Capital</li>
+          <li>Alphabet Capital Group</li>
+          <li>Madera Studio</li>
+          <li>CG1 Design</li>
+          <li>Luna Builders</li>
+          <li>Construct USA</li>
+          <li>Lifestyle Construction Group</li>
+          <li>Aguamarina Schools</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="wrap">
+      <div class="work-head"><h3>What we do</h3></div>
+      <div class="svc-grid">
+        <div><h5>Websites</h5><p>Webflow, Shopify, Wix and Squarespace builds with motion that serves the story.</p></div>
+        <div><h5>Branding</h5><p>Names, marks and brand books for companies that are starting or starting over.</p></div>
+        <div><h5>Marketing</h5><p>SEO, social and email campaigns tied to bookings, tickets and sales.</p></div>
+        <div><h5>Content</h5><p>Photo, video and writing in English and Spanish.</p></div>
+        <div><h5>Internal tools</h5><p>Staff portals, reservation systems and dashboards your team uses every day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="contact">
+    <div class="contact-top"><span class="mark" aria-hidden="true"></span><h2>Let's work<br><span>together</span></h2></div>
+    <div class="contact-line">
+      <a class="round magnetic" href="#contact" id="start"><span>Start a project</span></a>
+    </div>
+    <div class="pills">
+      <button class="pill" data-copy="matthew@firstlight.media" id="copyEmail">matthew@firstlight.media <small>Copy</small></button>
+      <a class="pill" href="https://maz.firstlight.media/" target="_blank" rel="noopener">See a live concept <small>↗</small></a>
+    </div>
+    <div class="foot mono">
+      <div>Version<b>2026 © First Light Media</b></div>
+      <div>Miami time<b id="tMia">--:--</b></div>
+      <div>Vallarta time<b id="tPvr">--:--</b></div>
+      <div>Socials<b><a href="https://www.instagram.com/firstlight.media/" target="_blank" rel="noopener">Instagram ↗</a></b></div>
+    </div>
+  </section>
+</main>
+
+<div class="preview" id="preview" aria-hidden="true"><div class="preview-inner" id="pvInner"></div><div class="preview-cta">View</div></div>
+<div class="toast" id="toast" role="status">Email copied</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const IMGS = Object.fromEntries(["everglades","maz","lofts","legado","pedini","vanwormer","abanzamos"].map(k=>[k,`/assets/work/${k}.jpg`]));
+document.querySelectorAll('img[data-src]').forEach(i=>{i.src=IMGS[i.dataset.src]});
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const hasGsap = typeof gsap !== 'undefined';
+if (hasGsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+/* marquee: speed and direction follow scroll */
+(function(){
+  const track=document.getElementById('track');
+  let x=0, dir=-1, speed=0.06;
+  let lastY=scrollY;
+  addEventListener('scroll',()=>{const y=scrollY; if(y!==lastY) dir = y>lastY?-1:1; lastY=y;},{passive:true});
+  function tick(){
+    const w=track.firstElementChild.offsetWidth;
+    if(!reduce){ x += dir*speed*(w/100); if(x<=-w) x+=w; if(x>0) x-=w; track.style.transform=`translate3d(${x}px,0,0)`; }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+if (hasGsap && !reduce){
+  /* load: resting state is visible; animate from offsets only */
+  gsap.from('.marquee span',{yPercent:40,duration:1.3,ease:'expo.out'});
+  gsap.from('.hero-meta > *',{y:24,duration:1,ease:'expo.out',stagger:.1,delay:.15});
+  gsap.from('.hero-mark',{rotate:-8,scale:.92,duration:1.6,ease:'expo.out'});
+  gsap.to('.hero-mark',{yPercent:30,rotate:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.marquee',{yPercent:-20,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.utils.toArray('.row').forEach(r=>gsap.from(r,{y:40,duration:.9,ease:'expo.out',scrollTrigger:{trigger:r,start:'top 92%'}}));
+  gsap.from('.contact h2',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.contact',start:'top bottom',end:'top 30%',scrub:true}});
+
+  /* floating menu button after hero */
+  if (fine) ScrollTrigger.create({trigger:'.hero',start:'bottom 12%',onEnter:()=>gsap.to('#fab',{scale:1,duration:.4,ease:'back.out(2)'}),onLeaveBack:()=>{if(!document.body.classList.contains('menu-open'))gsap.to('#fab',{scale:0,duration:.3})}});
+
+  /* magnetic buttons */
+  if (fine) document.querySelectorAll('.magnetic').forEach(el=>{
+    const xTo=gsap.quickTo(el,'x',{duration:.6,ease:'power3'}), yTo=gsap.quickTo(el,'y',{duration:.6,ease:'power3'});
+    el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(); xTo((e.clientX-r.left-r.width/2)*.35); yTo((e.clientY-r.top-r.height/2)*.35);});
+    el.addEventListener('mouseleave',()=>{xTo(0);yTo(0)});
+  });
+}
+
+/* cursor preview, stacked images slide by index like a filmstrip */
+(function(){
+  if(!fine || !hasGsap) return;
+  const pv=document.getElementById('preview'), inner=document.getElementById('pvInner');
+  const rows=[...document.querySelectorAll('.row')];
+  rows.forEach(r=>{const im=new Image(); im.src=IMGS[r.dataset.img]; im.alt=''; const d=document.createElement('div'); d.style.height='100%'; d.appendChild(im); inner.appendChild(d);});
+  inner.style.height = (rows.length*100)+'%'; inner.style.bottom='auto';
+  [...inner.children].forEach(c=>c.style.height=(100/rows.length)+'%');
+  const xTo=gsap.quickTo(pv,'x',{duration:.7,ease:'power3'}), yTo=gsap.quickTo(pv,'y',{duration:.7,ease:'power3'});
+  gsap.set(pv,{xPercent:-50,yPercent:-50,scale:0});
+  addEventListener('mousemove',e=>{xTo(e.clientX); yTo(e.clientY);});
+  const list=document.getElementById('rows');
+  rows.forEach((r,i)=>r.addEventListener('mouseenter',()=>{inner.style.transform=`translateY(${-i*(100/rows.length)}%)`;}));
+  list.addEventListener('mouseenter',()=>gsap.to(pv,{scale:1,duration:.45,ease:'power3.out'}));
+  list.addEventListener('mouseleave',()=>gsap.to(pv,{scale:0,duration:.35,ease:'power3.in'}));
+})();
+
+/* menu drawer */
+(function(){
+  const fab=document.getElementById('fab'), drawer=document.getElementById('drawer');
+  const set=open=>{document.body.classList.toggle('menu-open',open); fab.setAttribute('aria-expanded',open); drawer.setAttribute('aria-hidden',!open);};
+  fab.addEventListener('click',()=>set(!document.body.classList.contains('menu-open')));
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+})();
+
+/* copy email */
+(function(){
+  const b=document.getElementById('copyEmail'), t=document.getElementById('toast');
+  const show=msg=>{t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
+  b.addEventListener('click',()=>{const v=b.dataset.copy;
+    if(navigator.clipboard) navigator.clipboard.writeText(v).then(()=>show('Email copied'),()=>show(v)); else show(v);});
+  document.getElementById('start').addEventListener('click',e=>{e.preventDefault(); b.click();});
+})();
+
+/* local clocks */
+(function(){
+  const f=tz=>new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',timeZone:tz}).format(new Date());
+  const up=()=>{document.getElementById('tMia').textContent=f('America/New_York')+' ET';document.getElementById('tPvr').textContent=f('America/Bahia_Banderas')+' CST';};
+  up(); setInterval(up,20000);
+})();
+</script>
+</body>
+</html>
